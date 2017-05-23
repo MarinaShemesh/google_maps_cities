@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="mapApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Maps in AngularJS</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div ng-controller="mapController">
+    <div id="map"></div>
+    <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
+         <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
+         <label id="names" >{{marker.title}}</label></a>
+    </div>
+</div>
+
+<script
+    src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+
+  <script src="mapApp.js"></script>
+  <script src="mapFactory.js"></script>
+  <script src="mapController.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=add_your_google_maps_key_here"></script>
+</body>
+</html>
